@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-table样式 -->
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap-table.min.js -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <!-- 引入中文语言包 -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>产品管理</title>
+    <link href="../static/global/css/style1.css" rel="stylesheet" type="text/css" />
+    <link href="../static/global/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../static/global/js/jquery1.js"></script>
+    <script type="text/javascript" src="../static/global/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="../static/global/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="../static/global/editor/kindeditor.js"></script>
+
+    <script type="text/javascript">
+        KE.show({
+            id : 'content7',
+            //cssPath : './index.css'
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $(".select1").uedSelect({
+                width : 345
+            });
+            $(".select2").uedSelect({
+                width : 167
+            });
+            $(".select3").uedSelect({
+                width : 100
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="/success">首页</a></li>
+        <li><a href="#">产品管理</a></li>
+    </ul>
+</div>
+
+<div class="formbody">
+
+
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">新增产品</a></li>
+                <li><a href="#tab2" >产品管理</a></li>
+            </ul>
+        </div>
+
+        <div id="tab1" class="tabson">
+
+            <ul class="forminfo">
+                <li><label>产品名称<b>*</b></label><input  id ="1" name="" type="text" class="dfinput"  style="width:518px;"/></li>
+                <li><label>产品价格<b>*</b></label><input  id ="2" name="" type="text" class="dfinput" onkeyup="value=value.replace(/[^\d]/g,'')"  style="width:518px;"/></li>
+               <li><label>产品内容</label><iframe name="toppage" width=900px height=483px marginwidth=0 marginheight=0 frameborder="no" border="0"  src="../static/global/html/fuwenben.html" ></iframe></li>
+                <li><label>&nbsp;</label><input name="" type="button" class="btn" value="马上发布" onclick="addProduct()"/></li>
+            </ul>
+
+        </div>
+
+
+        <div id="tab2" class="tabson" >
+            <table data-toggle="table" data-url="/product/get">
+                <thead>
+                <tr>
+                    <th data-field="id">序号</th>
+                    <th data-field="name">名称</th>
+                    <th data-field="pirce">价格</th>
+                    <th data-field="miaoshu">描述</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+
+    <script type="text/javascript">
+        function addProduct() {
+            var inputValue1 = document.getElementById("1").value;
+            var inputValue2 = document.getElementById("2").value;
+            var inputValue5 = $('[name=toppage]')[0].contentWindow.getNeiR();
+            $.ajax({
+                url:'/product/add',
+                type:'GET',
+                data:{name:inputValue1,pirce:inputValue2,miaoshu:inputValue5},
+                success:function(data){
+                    alert("添加成功！");
+                    location.reload();
+                },
+                error:function(data){
+                    alert("添加失败！");
+                }
+            });
+        }
+    </script>
+
+
+</div>
+</body>
+</html>

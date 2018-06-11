@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>订单管理</title>
+    <meta charset="utf-8">
+    <!-- 引入bootstrap样式 -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-table样式 -->
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap-table.min.js -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <!-- 引入中文语言包 -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+</head>
+<body >
+<div class="text-center artcle-title">
+    <h1 ><font color="blue">订单管理页面</font></h1>
+</div>
+<table id="table" data-toggle="table"  data-url="/order/get">
+    <thead>
+    <tr>
+        <th data-checkbox="true"></th>
+        <th data-field="id">序号</th>
+        <th data-field="name">名称</th>
+        <th data-field="price">价格</th>
+        <th data-field="zt">状态</th>
+    </tr>
+    </thead>
+</table>
+<input name="" type="button" class="btn" value="已发货" onclick="ck()"/>
+
+
+
+</body>
+<script>
+    function ck(){
+        var num = getIdSelections();
+        $.ajax({
+            url: "./Order/updateState?s="+num,    //请求的url地址
+            dataType: "json",   //返回格式为json
+            async: true, //请求是否异步，默认为异步，这也是ajax重要特性
+            type: "GET",   //请求方式
+            success: function (data) {
+                alert("更新成功！");
+                location.reload();
+            },
+            error: function (data) {
+                console.log('请求发生错误：' + data);
+            }
+        });
+    }
+</script>
+<script>
+    function getIdSelections() {
+        return $.map($('#table').bootstrapTable('getSelections'),function (row) {
+            return row.id;
+        });
+    }
+</script>
+<script>
+    $("#table").bootstrapTable({
+        search: false,
+        pagination: true,
+        pageSize:10,
+        pageList: [5, 10, 15, 20],
+        showColumns: true,
+        showRefresh: true,
+        showToggle: true,
+        locale: "zh-CN",
+        striped: true,
+    });
+</script>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <!-- META DATA -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by HTML5XCSS3 dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="#">
+
+    <title>表格</title>
+
+    <link href="http://static.html580.com/assets/libs/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="http://static.html580.com/themes/html580/css/html580.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../static/global/css/bootstrap.min.css"  type="text/css">
+    <link href="../static/global/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="../static/global/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="../static/global/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/global/css/style.css">
+    <link href="../static/global/css/elegant-icons-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/global/css/buttons.css">
+    <link rel="stylesheet" href="../static/global/font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+    <script src="../static/global/js/html5shiv.js"></script>
+    <script src="../static/global/js/respond.min.js"></script>
+</head>
+
+<body class="sub-page">
+
+
+<!-- Background Gradients-->
+<div id="page-content" class="single-page">
+    <div class="container">
+        <div class="row">
+            <div id="main-content">
+                <article>
+                    <h5>Welcome friends to come here for a better future !</h5>
+                    <div class="art-content"  id = "main-art">
+                        <p th:text="'city: ' + ${city}" style="display:none;"/>
+                        <p th:text="'country: ' + ${country}" style="display:none;"/>
+                        <p th:text="'headimgurl: ' + ${headimgurl}" style="display:none";/>
+                        <p th:text="'language: ' + ${language}" style="display:none;"/>
+                        <p th:text="'微信名: ' + ${nickname}"  />
+                        <p th:text="'openid: ' + ${openid}" style="display:none;"/>
+                        <p th:text="'privilege: ' + ${privilege}" style="display:none;" />
+                        <p th:text="'province: ' + ${province}" style="display:none;"/>
+                        <p th:text="'sex: ' + ${sex}" style="display:none;"/>
+
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
+    <form class="form-horizontal " method="get">
+        <div class="form-group">
+            <div class="col-lg-10">
+                <input class="form-control input-lg m-bot15"  id="name" type="text" placeholder="姓名">
+                <input class="form-control input-lg m-bot15" id="number" type="text" placeholder="省份证号">
+                <select class="form-control input-lg m-bot15" id="term">
+                    <option>年限</option>
+                    <option>3年期</option>
+                    <option>5年期</option>
+                    <option>10年期</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+
+<a href="javascript:void(0);" onclick="js_buy()" class="button button-raised button-caution"> 确定</a>
+<footer>
+    <div class="col-md-4">
+        <p> <a href="http://www.baidu.com/" target="_blank" title="产品之家">产品之家</a> - Collect from <a href="http://www.qq.com/" title="微信产品" target="_blank">微信产品</a></p>
+    </div>
+
+</footer>
+
+<!-- jquery -->
+<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../static/global/js/agency.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../static/global/js/jquery.easing.min.js"></script>
+<script src="../static/global/js/classie.js"></script>
+<script src="../static/global/js/cbpAnimatedHeader.js"></script>
+
+
+</body>
+</html>
+<script th:inline="javascript">
+    js_buy = function ()
+    {
+        var name = document.getElementById("name").value;
+        th: var openid = [[${openid}]];
+        th: var pid = [[${pId}]];
+        $.ajax({
+            url: "./Order/add",    //请求的url地址
+            dataType: "json",   //返回格式为json
+            async: true, //请求是否异步，默认为异步，这也是ajax重要特性
+            data: {'name':name,'producId':pid,'OpenID':openid},
+            type: "POST",   //请求方式
+            success: function (data) {
+                alert("购买成功！");
+                location.reload();
+            },
+            error: function (data) {
+                console.log('请求发生错误：' + data);
+            }
+        });
+    }
+</script>

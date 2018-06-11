@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-table样式 -->
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap-table.min.js -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <!-- 引入中文语言包 -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图文消息管理</title>
+    <link href="../static/global/css/style1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../static/global/js/jquery1.js"></script>
+    <script type="text/javascript" src="../static/global/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="../static/global/js/select-ui.min.js"></script>
+
+    <script type="text/javascript">
+        KE.show({
+            id : 'content7',
+            //cssPath : './index.css'
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $(".select1").uedSelect({
+                width : 345
+            });
+            $(".select2").uedSelect({
+                width : 167
+            });
+            $(".select3").uedSelect({
+                width : 100
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="/success">首页</a></li>
+        <li><a href="#">群发消息</a></li>
+    </ul>
+</div>
+
+<div class="formbody">
+
+
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">发布图文消息</a></li>
+                <li><a href="#tab2">图文消息历史</a></li>
+            </ul>
+        </div>
+
+        <div id="tab1" class="tabson">
+
+
+            <ul class="forminfo">
+                <li><label>图片</label><input type="file" id="0"></li>
+                <li><label>图文作者<b>*</b></label><input  id ="1" name="" type="text" class="dfinput"   style="width:518px;"/></li>
+                <li><label>图文标题<b>*</b></label>  <input  id ="2" name="" type="text" class="dfinput"   style="width:518px;"/></li>
+                <li><label>图文描述<b>*</b></label> <input  id ="3" name="" type="text" class="dfinput"  style="width:518px;"/></li>
+                <li><label>文章内容</label>
+                    <select id="BtnCodeStr" name="BtnCodeStrName" class="selectpicker show-tick form-control"
+                            data-style="btn-success" style="width: 518px    " >
+                        <!--<option value=""-->
+                    </select>
+                </li>
+                <li><label>&nbsp;</label><input name="" type="button" class="btn" value="马上发布" onclick="test()"/></li>
+            </ul>
+
+        </div>
+
+
+        <div id="tab2" class="tabson">
+            <table data-toggle="table" data-url="/product/get">
+                <thead>
+                <tr>
+                    <th data-field="id">序号</th>
+                    <th data-field="name">名称</th>
+                    <th data-field="pirce">价格</th>
+                    <th data-field="miaoshu">描述</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+
+    <script type="text/javascript">
+        function test() {
+            var inputValue0 = document.getElementById("0").value;
+            var inputValue1 = document.getElementById("1").value;
+            var inputValue2 = document.getElementById("2").value;
+            var inputValue3 = document.getElementById("3").value;
+            var inputValue5 = $("#BtnCodeStr").val()
+            $.ajax({
+                url:'./Test/sendProductId',
+                type:'POST',
+                data:{a:inputValue1,b:inputValue2,c:inputValue3,e:inputValue5,f:inputValue0},
+                success:function(data){
+                    alert("发送成功！")
+                },
+                error:function(data){
+                    alert("发送失败！")
+                }
+            });
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+     function myfun() {
+        $.ajax({
+            type: 'GET',
+            url: '/product/getIdAndName',
+            success: function (data) {
+              console.log(data)
+
+                 $.each(data, function (i) {
+                     $("#BtnCodeStr").append("<option value='"+data[i].id+"'>"+data[i].name+"</option>")
+                 });
+                 $('.selectpicker').selectpicker({
+                 style: 'btn-info',
+                 size: 5
+                 });
+            }
+        });
+    }
+     window.onload = myfun;
+</script>

@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Class-Path: thymeleaf-spring5-3.0.9.RELEASE.jar spring-jdbc-5.0.4.RELE
+ ASE.jar spring-context-5.0.4.RELEASE.jar spring-boot-starter-2.0.0.RE
+ LEASE.jar attoparser-2.0.4.RELEASE.jar slf4j-api-1.7.25.jar jackson-d
+ atabind-2.9.4.jar spring-webmvc-5.0.4.RELEASE.jar mapper-spring-boot-
+ autoconfigure-1.1.1.jar springfox-spring-web-2.2.2.jar jsqlparser-1.0
+ .jar spring-plugin-metadata-1.2.0.RELEASE.jar spring-boot-starter-sec
+ urity-2.0.0.RELEASE.jar unbescape-1.1.5.RELEASE.jar mapstruct-1.0.0.C
+ R1.jar jackson-datatype-jdk8-2.9.4.jar logback-core-1.2.3.jar mybatis
+ -spring-boot-starter-1.3.1.jar mybatis-spring-boot-autoconfigure-1.3.
+ 1.jar classmate-1.3.4.jar spring-security-config-5.0.3.RELEASE.jar sp
+ ring-boot-starter-web-2.0.0.RELEASE.jar spring-core-5.0.4.RELEASE.jar
+  spring-security-web-5.0.3.RELEASE.jar javax.annotation-api-1.3.2.jar
+  tomcat-embed-websocket-8.5.28.jar spring-boot-autoconfigure-2.0.0.RE
+ LEASE.jar springfox-swagger-ui-2.2.2.jar spring-hateoas-0.24.0.RELEAS
+ E.jar jul-to-slf4j-1.7.25.jar spring-tx-5.0.4.RELEASE.jar aspectjweav
+ er-1.8.13.jar spring-security-core-5.0.3.RELEASE.jar mapper-3.4.0.jar
+  spring-web-5.0.4.RELEASE.jar snakeyaml-1.19.jar logback-classic-1.2.
+ 3.jar mybatis-spring-1.3.1.jar log4j-api-2.10.0.jar springfox-spi-2.2
+ .2.jar hibernate-validator-6.0.7.Final.jar pagehelper-5.0.3.jar thyme
+ leaf-extras-java8time-3.0.1.RELEASE.jar mysql-connector-java-5.1.45.j
+ ar mybatis-3.4.5.jar tomcat-embed-core-8.5.28.jar persistence-api-1.0
+ .jar swagger-models-1.5.3.jar spring-boot-starter-json-2.0.0.RELEASE.
+ jar aspectjrt-1.8.13.jar spring-boot-starter-jdbc-2.0.0.RELEASE.jar j
+ ackson-module-parameter-names-2.9.4.jar jboss-logging-3.3.2.Final.jar
+  spring-boot-2.0.0.RELEASE.jar spring-boot-devtools-2.0.0.RELEASE.jar
+  spring-aop-5.0.4.RELEASE.jar mapper-spring-boot-starter-1.1.1.jar sp
+ ring-beans-5.0.4.RELEASE.jar springfox-schema-2.2.2.jar springfox-swa
+ gger2-2.2.2.jar spring-boot-starter-logging-2.0.0.RELEASE.jar thymele
+ af-3.0.9.RELEASE.jar swagger-annotations-1.5.3.jar guava-18.0.jar spr
+ ing-boot-starter-tomcat-2.0.0.RELEASE.jar spring-boot-starter-thymele
+ af-2.0.0.RELEASE.jar spring-plugin-core-1.2.0.RELEASE.jar jackson-cor
+ e-2.9.4.jar validation-api-2.0.1.Final.jar jackson-annotations-2.9.0.
+ jar jackson-datatype-jsr310-2.9.4.jar HikariCP-2.7.8.jar springfox-sw
+ agger-common-2.2.2.jar spring-jcl-5.0.4.RELEASE.jar log4j-to-slf4j-2.
+ 10.0.jar springfox-core-2.2.2.jar spring-expression-5.0.4.RELEASE.jar
+  tomcat-embed-el-8.5.28.jar
+Main-Class: com.luc.luc_bs.LucBsApplication
+

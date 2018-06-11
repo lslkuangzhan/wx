@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luc.luc_bs.Dao.TradeDao">
+    <select id="getTradeTotal"  resultType="Integer">
+        SELECT COUNT(id) from trade ;
+    </select>
+
+    <select id="getPriceTotal"  resultType="Integer">
+        SELECT sum(price)  from trade ;
+    </select>
+    <select id="getPriceTotalByProduct"  resultType="java.util.Map">
+       SELECT p.name, sum(price) As value FROM `trade` t LEFT JOIN product p on t.producId = p.id GROUP BY producId;
+    </select>
+
+    <select id="getOrder"  resultType="java.util.Map">
+        SELECT t.* ,p.name , CASE WHEN t.state = '1' THEN '已完成订单' WHEN t.state = '0' THEN '未完成订单'  END  As zt from trade  t LEFT JOIN product p on p.id=t.producId order by t.state DESC ;
+    </select>
+
+
+
+</mapper>

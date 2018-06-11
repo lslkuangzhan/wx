@@ -1,0 +1,21 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.79.54.72:3306/luc_bs?serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    username: root
+    password: lsl--123456
+
+  thymeleaf:
+    prefix: classpath:/templates/
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.luc.luc_bs.Entity
+
+#pagehelper��ҳ���
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

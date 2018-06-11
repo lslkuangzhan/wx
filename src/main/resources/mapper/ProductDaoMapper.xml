@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luc.luc_bs.Dao.ProductDao">
+    <select id="getProductTotal"  resultType="Integer">
+        SELECT COUNT(id) from product ;
+    </select>
+
+    <!--<select id="getAllProduct"  resultType="java.util.List">
+        SELECT * from product ;
+    </select>-->
+</mapper>

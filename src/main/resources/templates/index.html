@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="../static/global/img/favicon.png">
+
+    <title>SHOWING</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../static/global/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="../static/global/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="../static/global/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="../static/global/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- full calendar css-->
+    <link href="../static/global/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="../static/global/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <!-- easy pie chart-->
+    <link href="../static/global/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="../static/global/css/owl.carousel.css" type="text/css">
+    <link href="../static/global/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../static/global/css/fullcalendar.css">
+    <link href="../static/global/css/widgets.css" rel="stylesheet">
+    <link href="../static/global/css/style.css" rel="stylesheet">
+    <link href="../static/global/css/style-responsive.css" rel="stylesheet" />
+    <link href="../static/global/css/xcharts.min.css" rel=" stylesheet">
+    <link href="../static/global/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+    <script src="../static/global/js/html5shiv.js"></script>
+    <script src="../static/global/js/respond.min.js"></script>
+    <script src="../static/global/js/lte-ie7.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- container section start -->
+<section id="container" class="">
+
+
+    <header class="header dark-bg">
+        <div class="toggle-nav">
+            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+        </div>
+
+        <!--logo start-->
+        <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+        <!--logo end-->
+
+     <!--   <div class="nav search-row" id="top_menu">
+            &lt;!&ndash;  search form start &ndash;&gt;
+            <ul class="nav top-menu">
+                <li>
+                    <form class="navbar-form">
+                        <input class="form-control" placeholder="Search" type="text">
+                    </form>
+                </li>
+            </ul>
+            &lt;!&ndash;  search form end &ndash;&gt;
+        </div>-->
+
+        <div class="top-nav notification-row">
+            <!-- notificatoin dropdown start-->
+            <ul class="nav pull-right top-menu">
+                <li id="alert_notificatoin_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                        <i class="icon-bell-l"></i>
+                       <!-- <span class="badge bg-important">7</span>-->
+                    </a>
+                    <ul class="dropdown-menu extended notification">
+                        <div class="notify-arrow notify-arrow-blue"></div>
+                        <li>
+                            <a href="/addProduct">
+                                <span class="label label-primary"><i class="icon_profile"></i></span>
+                                添加产品
+                              <!--  <span class="small italic pull-right">5 mins</span>-->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/TAB">
+                                <span class="label label-warning"><i class="icon_profile"></i></span>
+                                活动消息
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Order">
+                                <span class="label label-primary"><i class="icon_profile"></i></span>
+                                订单管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Buy">
+                                <span class="label label-primary"><i class="icon_profile"></i></span>
+                                图文消息
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="" src="../static/global/img/avatar1_small.jpg">
+                            </span>
+                        <span class="username">Jenifer Smith</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu extended logout">
+                        <div class="log-arrow-up"></div>
+                        <li class="eborder-top">
+                            <a href="#"><i class="icon_profile"></i> My Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon_chat_alt"></i> Chats</a>
+                        </li>
+                        <li>
+                            <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                        </li>
+                        <li>
+                            <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+                        </li>
+                        <li>
+                            <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="main-content">
+        <section class="wrapper">
+            <!--overview start-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header"><i class="fa fa-laptop"></i> SHOWING</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="info-box blue-bg">
+                        <i class="fa fa-comments"></i>
+                        <div class="count"><p th:text="${count}" /></div>
+                        <div class="title">关注的人</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="info-box brown-bg">
+                        <i class="fa fa-shopping-cart"></i>
+                        <div class="count"><p th:text="${commodity}" /></div>
+                        <div class="title">商品个数</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="info-box dark-bg">
+                        <i class="fa fa-thumbs-o-up"></i>
+                        <div class="count"><p th:text="${price}" /></div>
+                        <div class="title">销售金额</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="info-box green-bg">
+                        <i class="fa fa-cubes"></i>
+                        <div class="count"><p th:text="${trade}" /></div>
+                        <div class="title">出售个数</div>
+                    </div>
+                </div>
+
+
+            </div>
+            <script src="../static/global/js/echarts.min.js"></script>
+            <div id="main" style="width: 600px;height:400px;"></div>
+
+
+            <!-- Today status end -->
+
+
+
+            <div class="row">
+
+                <div class="col-lg-9 col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2><i class="fa fa-flag-o red"></i><strong>Registered Users</strong></h2>
+                            <div class="panel-actions">
+                                <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                                <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                                <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table bootstrap-datatable countries">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Country</th>
+                                    <th>Users</th>
+                                    <th>Online</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><img src="../static/global/img/China.png" style="height:18px; margin-top:-2px;"></td>
+                                    <td>A</td>
+                                    <td>L</td>
+                                    <td>男</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="../static/global/img/China.png" style="height:18px; margin-top:-2px;"></td>
+                                    <td>B</td>
+                                    <td>L</td>
+                                    <td>女</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="../static/global/img/China.png" style="height:18px; margin-top:-2px;"></td>
+                                    <td>C</td>
+                                    <td>L</td>
+                                    <td>女</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 portlets">
+                </div>
+            </div><br><br>
+
+            <div class="row">
+
+            </div>
+        </section>
+    </section>
+</section>
+<script src="../static/global/js/jquery.js"></script>
+<script src="../static/global/js/jquery-ui-1.10.4.min.js"></script>
+<script src="../static/global/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../static/global/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../static/global/js/bootstrap.min.js"></script>
+<script src="../static/global/js/jquery.scrollTo.min.js"></script>
+<script src="../static/global/js/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="../static/global/assets/jquery-knob/js/jquery.knob.js"></script>
+<script src="../static/global/js/jquery.sparkline.js" type="text/javascript"></script>
+<script src="../static/global/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+<script src="../static/global/js/owl.carousel.js" ></script>
+<<script src="../static/global/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../static/global/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+<script src="../static/global/js/calendar-custom.js"></script>
+<script src="../static/global/js/jquery.rateit.min.js"></script>
+<script src="../static/global/js/jquery.customSelect.min.js" ></script>
+<script src="../static/global/assets/chart-master/Chart.js"></script>
+
+<script src="../static/global/js/scripts.js"></script>
+<script src="../static/global/js/sparkline-chart.js"></script>
+<script src="../static/global/js/easy-pie-chart.js"></script>
+<script src="../static/global/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../static/global/js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../static/global/js/xcharts.min.js"></script>
+<script src="../static/global/js/jquery.autosize.min.js"></script>
+<script src="../static/global/js/jquery.placeholder.min.js"></script>
+<script src="../static/global/js/gdp-data.js"></script>
+<script src="../static/global/js/morris.min.js"></script>
+<script src="../static/global/js/sparklines.js"></script>
+<script src="../static/global/js/charts.js"></script>
+<script src="../static/global/js/jquery.slimscroll.min.js"></script>
+<script>
+
+    //knob
+    $(function() {
+        $(".knob").knob({
+            'draw' : function () {
+                $(this.i).val(this.cv + '%')
+            }
+        })
+    });
+
+    //carousel
+    $(document).ready(function() {
+        $("#owl-slider").owlCarousel({
+            navigation : true,
+            slideSpeed : 300,
+            paginationSpeed : 400,
+            singleItem : true
+
+        });
+    });
+
+    //custom select box
+
+    $(function(){
+        $('select.styled').customSelect();
+    });
+
+    /* ---------- Map ---------- */
+    $(function(){
+        $('#map').vectorMap({
+            map: 'world_mill_en',
+            series: {
+                regions: [{
+                    values: gdpData,
+                    scale: ['#000', '#000'],
+                    normalizeFunction: 'polynomial'
+                }]
+            },
+            backgroundColor: '#eef3f7',
+            onLabelShow: function(e, el, code){
+                el.html(el.html()+' (GDP - '+gdpData[code]+')');
+            }
+        });
+    });
+
+
+
+</script>
+
+</body>
+</html>
+<script th:inline="javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    th: var number = [[${Echarts}]];
+    myChart.setOption({
+            title : {
+                text: '销售金额',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: number
+            },
+            series : [
+                {
+                    name: '各产品销售金额对比',
+                    type: 'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    data:number,
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        }
+        )
+</script>
